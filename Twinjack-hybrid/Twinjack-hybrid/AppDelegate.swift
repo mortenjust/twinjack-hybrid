@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var statusItemMenu: NSMenu!
-    @IBOutlet weak var win: NSWindow!
+    @IBOutlet weak var win: TwinjackWindow!
     var statusItem : NSStatusItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // win.styleMask = win.styleMask | NSFullSizeContentViewWindowMask;
         win.styleMask = [win.styleMask, NSFullSizeContentViewWindowMask]
         win.title = ""
+        win.backgroundColor = NSColor.black
         
         
         statusItem = NSStatusBar.system().statusItem(withLength: -1)

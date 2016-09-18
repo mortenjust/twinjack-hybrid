@@ -25,6 +25,10 @@ class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegat
         webView.translatesAutoresizingMaskIntoConstraints = true
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        webView.wantsLayer = true
+        webView.enclosingScrollView?.wantsLayer = true
+        webView.enclosingScrollView?.backgroundColor = NSColor.clear
+        
         view.addSubview(webView)
         view.addSubview(windowDraggerView)
         

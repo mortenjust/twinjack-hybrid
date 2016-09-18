@@ -150,12 +150,17 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="TwinjackWindow" customModule="Twinjack" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="874" y="757" width="270" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="150" height="150"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -219,11 +224,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="802-Wo-SeE" customClass="WindowDraggerView" customModule="Twinjack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="270" height="220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="802-Wo-SeE" secondAttribute="bottom" constant="50" id="4RT-s7-F5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="802-Wo-SeE" secondAttribute="bottom" id="4RT-s7-F5Q"/>
                             <constraint firstItem="802-Wo-SeE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="eaA-3H-6z2"/>
                             <constraint firstItem="802-Wo-SeE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="id2-Pc-ZuU"/>
                             <constraint firstAttribute="trailing" secondItem="802-Wo-SeE" secondAttribute="trailing" id="tML-fl-8UD"/>

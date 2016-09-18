@@ -25,6 +25,7 @@ class WindowDraggerView: NSView {
     
     override func mouseDown(with theEvent: NSEvent) {
         initialLocation = theEvent.locationInWindow
+        super.mouseDown(with: theEvent)
     }
     
     override func mouseDragged(with theEvent: NSEvent) {
