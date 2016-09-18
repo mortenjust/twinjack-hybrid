@@ -9,10 +9,10 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegate, WKUIDelegate {
     
     var webView = WKWebView()
-    var centerReceiver = NSDistributedNotificationCenter()
+    var centerReceiver = DistributedNotificationCenter()
     
     @IBOutlet weak var windowDraggerView: WindowDraggerView!
     
@@ -21,20 +21,28 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         view.autoresizesSubviews = true
         self.view.addSubview(webView)
         webView.frame = self.view.frame        
-        webView.autoresizingMask = [.ViewHeightSizable, .ViewWidthSizable]
+        webView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable]
         webView.translatesAutoresizingMaskIntoConstraints = true
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
         view.addSubview(webView)
         view.addSubview(windowDraggerView)
+        
         
         loadWebUI()
         startSpotifyObserver()
     }
 
     func loadWebUI(){
-        let ud = NSUserDefaults.standardUserDefaults()
-        let useLocalhost = ud.boolForKey("useLocalHost")
+        let ud = UserDefaults.standard
+        let useLocalhost = ud.bool(forKey: "useLocalHost")
         
-        var u = "https://handy-balancer-91514.firebaseapp.com/admin"
+        var version = "unknown"
+        if let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            version = v
+        }
+        var u = "https://handy-balancer-91514.firebaseapp.com/admin?version=\(version)"
+        print("url is \(u)")
         
         if useLocalhost {
             print("using local host")
@@ -45,36 +53,40 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         print("load")
         
-        let r = NSURLRequest(URL: NSURL(string: u)!)
-        webView.loadRequest(r)
+        let r = URLRequest(url: URL(string: u)!)
+        webView.load(r)
+        
+        
     }
     
     func startSpotifyObserver(){
-        self.centerReceiver.addObserverForName("com.spotify.client.PlaybackStateChanged", object: nil, queue: nil) { (note) -> Void in
+        self.centerReceiver.addObserver(forName: NSNotification.Name(rawValue: "com.spotify.client.PlaybackStateChanged"), object: nil, queue: nil) { (note) -> Void in
                 print("got spotify event")
-                let info = note.userInfo!
+                let info = (note as NSNotification).userInfo!
                 let state = info["Player State"] as! String
 
                 switch state{
                 case "Paused":
                     print("paused")
+                    self.pause()
                 case "Playing":
-                    let track = Track(spotifyInfo: info)
+                    let track = Track(spotifyInfo: info as [NSObject : AnyObject])
                     print("started track:"+track.name)
                     self.play(track)
                 default:
                     print("Spotify Not playing or paused")
-                    self.pause()
+                    
             }
         }
     }
     
-    func play(track:Track){
+    func play(_ track:Track){
 //        let js = "window.startSong('\(track.name)', '\(track.artist)', '\(track.album)')"
-        let js = "window.startSong({track:\"\(track.name)\", artist:\"\(track.artist)\", album:\"\(track.album)\", position:\(track.position)})"
+        let js = "window.startSong({track:\"\(track.name)\", artist:\"\(track.artist)\", album:\"\(track.album)\", position:\(track.position!)})"
         print(js)
         webView.evaluateJavaScript(js) { (result, error) in
             print(result)
+            print(error)
         }
     }
     
@@ -83,19 +95,35 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         print(js)
         webView.evaluateJavaScript(js) { (result, error) in
             print(result)
+            print(error?.localizedDescription)
         }
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("finished navigating")
+        
+        
     }
     
-    func webView(webView: WebView!, decidePolicyForNewWindowAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, newFrameName frameName: String!, decisionListener listener: WebPolicyDecisionListener!) {
-        print("\ndecidePolicyForNewWindowAction: \(request.URL?.absoluteString)")
-        listener.use()
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+        print("createwebview with")
+        
+        let url = navigationAction.request.url!
+        NSWorkspace.shared().open(url)
+        
+        return nil
     }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("deciding policy")
+        decisionHandler(.allow)
 
+    }
+    
+    
 }
 

@@ -10,18 +10,50 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    @IBOutlet weak var statusItemMenu: NSMenu!
+    @IBOutlet weak var win: NSWindow!
+    var statusItem : NSStatusItem!
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        let win = NSApplication.sharedApplication().windows.first!
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let win = NSApplication.shared().windows.first!
         win.titlebarAppearsTransparent = true
-        win.movableByWindowBackground = true
-        win.styleMask = win.styleMask | NSFullSizeContentViewWindowMask;
+        win.isMovableByWindowBackground = true
+        // win.styleMask = win.styleMask | NSFullSizeContentViewWindowMask;
+        win.styleMask = [win.styleMask, NSFullSizeContentViewWindowMask]
         win.title = ""
         
-        // Insert code here to initialize your application
+        
+        statusItem = NSStatusBar.system().statusItem(withLength: -1)
+        
+        statusItem.image = NSImage(named: "twinjackstatus")
+        statusItem.alternateImage = NSImage(named: "twinjackstatus-alternate")
+        //statusItem.action = #selector(showSelected(sender:))
+//        statusItem.menu = statusItemMenu
+        
+        let menu = NSMenu(title: "hehe")
+        
+        menu.addItem(NSMenuItem(title: "Show", action: #selector(showSelected(sender:)), keyEquivalent: ""))
+        
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitSelected(sender:)), keyEquivalent: ""))
+        
+        statusItem.menu = menu
+        
+    }
+    
+    func quitSelected(sender:AnyObject){
+        NSApp.terminate(nil)
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    @IBAction func showSelected(sender: AnyObject) {
+           makeWindowActive()
+    }
+    
+    func makeWindowActive(){
+        NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 

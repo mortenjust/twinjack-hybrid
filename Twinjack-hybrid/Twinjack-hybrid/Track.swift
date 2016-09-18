@@ -10,10 +10,10 @@
 import Cocoa
 
 protocol TrackDelegate {
-    func trackAlbumImageDidChange(image:NSImage)
+    func trackAlbumImageDidChange(_ image:NSImage)
 }
 
-enum MusicPlayer { case Spotify, Itunes }
+enum MusicPlayer { case spotify, itunes }
 
 class Track: NSObject {
     var name:String = ""
@@ -81,10 +81,10 @@ class Track: NSObject {
 //        } // alamo
 //    }
 //    
-    init(spotifyInfo info:[NSObject : AnyObject]){
+    init(spotifyInfo info:[AnyHashable: Any]){
         super.init()
         
-        player = .Spotify
+        player = .spotify
         name = (info["Name"] as? String)!
         popularity = info["Popularity"] as? Int
         album = (info["Album"] as? String)!
@@ -98,11 +98,11 @@ class Track: NSObject {
 //        })
     }
     
-    init(iTunesInfo info:[NSObject : AnyObject]){
+    init(iTunesInfo info:[AnyHashable: Any]){
         super.init()
-        player = .Itunes
+        player = .itunes
         name = (info["Name"] as? String)!
-        let isBeats = NSString(string: name).containsString("Beats")
+        let isBeats = NSString(string: name).contains("Beats")
         
         if isBeats {
             print("Can't handle Beats yet")

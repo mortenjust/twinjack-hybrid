@@ -7,26 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8198C1E1D8DC73100F9FBDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C1D1D8DC73100F9FBDE /* AppDelegate.swift */; };
+		C8198C201D8DC73100F9FBDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8198C1F1D8DC73100F9FBDE /* ViewController.swift */; };
+		C8198C221D8DC73100F9FBDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8198C211D8DC73100F9FBDE /* Assets.xcassets */; };
+		C8198C251D8DC73100F9FBDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8198C231D8DC73100F9FBDE /* Main.storyboard */; };
+		C8198C2D1D8DC87E00F9FBDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8198C2C1D8DC87E00F9FBDE /* Images.xcassets */; };
 		C89C38CC1D7FE3C0007DEE70 /* WindowDraggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C38CB1D7FE3C0007DEE70 /* WindowDraggerView.swift */; };
 		C8C6AC1B1D7E645300923598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6AC1A1D7E645300923598 /* AppDelegate.swift */; };
 		C8C6AC1D1D7E645300923598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6AC1C1D7E645300923598 /* ViewController.swift */; };
-		C8C6AC1F1D7E645300923598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C6AC1E1D7E645300923598 /* Assets.xcassets */; };
 		C8C6AC221D7E645300923598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C6AC201D7E645300923598 /* Main.storyboard */; };
 		C8C6AC2A1D7E837000923598 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6AC291D7E837000923598 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C8198C1B1D8DC73100F9FBDE /* TwinjackHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwinjackHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8198C1D1D8DC73100F9FBDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8198C1F1D8DC73100F9FBDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8198C211D8DC73100F9FBDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8198C241D8DC73100F9FBDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8198C261D8DC73100F9FBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8198C2C1D8DC87E00F9FBDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C89C38CB1D7FE3C0007DEE70 /* WindowDraggerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowDraggerView.swift; path = "Twinjack-hybrid/WindowDraggerView.swift"; sourceTree = "<group>"; };
-		C8C6AC171D7E645300923598 /* Twinjack-hybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twinjack-hybrid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C6AC171D7E645300923598 /* Twinjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twinjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C6AC1A1D7E645300923598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C6AC1C1D7E645300923598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8C6AC1E1D7E645300923598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C6AC211D7E645300923598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8C6AC231D7E645300923598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C6AC291D7E837000923598 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C8198C181D8DC73100F9FBDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8C6AC141D7E645300923598 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,11 +54,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8198C1C1D8DC73100F9FBDE /* TwinjackHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C8198C1D1D8DC73100F9FBDE /* AppDelegate.swift */,
+				C8198C1F1D8DC73100F9FBDE /* ViewController.swift */,
+				C8198C211D8DC73100F9FBDE /* Assets.xcassets */,
+				C8198C231D8DC73100F9FBDE /* Main.storyboard */,
+				C8198C261D8DC73100F9FBDE /* Info.plist */,
+			);
+			path = TwinjackHelper;
+			sourceTree = "<group>";
+		};
 		C8C6AC0E1D7E645300923598 = {
 			isa = PBXGroup;
 			children = (
 				C89C38CB1D7FE3C0007DEE70 /* WindowDraggerView.swift */,
 				C8C6AC191D7E645300923598 /* Twinjack-hybrid */,
+				C8198C1C1D8DC73100F9FBDE /* TwinjackHelper */,
 				C8C6AC181D7E645300923598 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,7 +79,8 @@
 		C8C6AC181D7E645300923598 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8C6AC171D7E645300923598 /* Twinjack-hybrid.app */,
+				C8C6AC171D7E645300923598 /* Twinjack.app */,
+				C8198C1B1D8DC73100F9FBDE /* TwinjackHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				C8C6AC291D7E837000923598 /* Track.swift */,
+				C8198C2C1D8DC87E00F9FBDE /* Images.xcassets */,
 				C8C6AC1A1D7E645300923598 /* AppDelegate.swift */,
 				C8C6AC1C1D7E645300923598 /* ViewController.swift */,
-				C8C6AC1E1D7E645300923598 /* Assets.xcassets */,
 				C8C6AC201D7E645300923598 /* Main.storyboard */,
 				C8C6AC231D7E645300923598 /* Info.plist */,
 			);
@@ -70,9 +101,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8C6AC161D7E645300923598 /* Twinjack-hybrid */ = {
+		C8198C1A1D8DC73100F9FBDE /* TwinjackHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8C6AC261D7E645300923598 /* Build configuration list for PBXNativeTarget "Twinjack-hybrid" */;
+			buildConfigurationList = C8198C271D8DC73100F9FBDE /* Build configuration list for PBXNativeTarget "TwinjackHelper" */;
+			buildPhases = (
+				C8198C171D8DC73100F9FBDE /* Sources */,
+				C8198C181D8DC73100F9FBDE /* Frameworks */,
+				C8198C191D8DC73100F9FBDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwinjackHelper;
+			productName = TwinjackHelper;
+			productReference = C8198C1B1D8DC73100F9FBDE /* TwinjackHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C8C6AC161D7E645300923598 /* Twinjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8C6AC261D7E645300923598 /* Build configuration list for PBXNativeTarget "Twinjack" */;
 			buildPhases = (
 				C8C6AC131D7E645300923598 /* Sources */,
 				C8C6AC141D7E645300923598 /* Frameworks */,
@@ -82,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = "Twinjack-hybrid";
+			name = Twinjack;
 			productName = "Twinjack-hybrid";
-			productReference = C8C6AC171D7E645300923598 /* Twinjack-hybrid.app */;
+			productReference = C8C6AC171D7E645300923598 /* Twinjack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -93,12 +141,18 @@
 		C8C6AC0F1D7E645300923598 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Morten Just Petersen";
 				TargetAttributes = {
+					C8198C1A1D8DC73100F9FBDE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UDGLB23X37;
+						ProvisioningStyle = Automatic;
+					};
 					C8C6AC161D7E645300923598 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -115,24 +169,43 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8C6AC161D7E645300923598 /* Twinjack-hybrid */,
+				C8C6AC161D7E645300923598 /* Twinjack */,
+				C8198C1A1D8DC73100F9FBDE /* TwinjackHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C8198C191D8DC73100F9FBDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8198C221D8DC73100F9FBDE /* Assets.xcassets in Resources */,
+				C8198C251D8DC73100F9FBDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8C6AC151D7E645300923598 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C6AC1F1D7E645300923598 /* Assets.xcassets in Resources */,
 				C8C6AC221D7E645300923598 /* Main.storyboard in Resources */,
+				C8198C2D1D8DC87E00F9FBDE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C8198C171D8DC73100F9FBDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8198C201D8DC73100F9FBDE /* ViewController.swift in Sources */,
+				C8198C1E1D8DC73100F9FBDE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8C6AC131D7E645300923598 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +220,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C8198C231D8DC73100F9FBDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8198C241D8DC73100F9FBDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		C8C6AC201D7E645300923598 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -158,6 +239,39 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C8198C281D8DC73100F9FBDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UDGLB23X37;
+				INFOPLIST_FILE = TwinjackHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortenjust.TwinjackHelper.TwinjackHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C8198C291D8DC73100F9FBDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UDGLB23X37;
+				INFOPLIST_FILE = TwinjackHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortenjust.TwinjackHelper.TwinjackHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C8C6AC241D7E645300923598 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -172,8 +286,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -217,8 +333,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -237,6 +355,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -247,8 +366,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Twinjack-hybrid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mortenjust.Twinjack-hybrid";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortenjust.Twinjack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -259,14 +379,23 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Twinjack-hybrid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mortenjust.Twinjack-hybrid";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortenjust.Twinjack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C8198C271D8DC73100F9FBDE /* Build configuration list for PBXNativeTarget "TwinjackHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8198C281D8DC73100F9FBDE /* Debug */,
+				C8198C291D8DC73100F9FBDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C8C6AC121D7E645300923598 /* Build configuration list for PBXProject "Twinjack-hybrid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -276,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8C6AC261D7E645300923598 /* Build configuration list for PBXNativeTarget "Twinjack-hybrid" */ = {
+		C8C6AC261D7E645300923598 /* Build configuration list for PBXNativeTarget "Twinjack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8C6AC271D7E645300923598 /* Debug */,

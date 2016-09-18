@@ -19,16 +19,16 @@ class WindowDraggerView: NSView {
         }
     }
     
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
     }
     
-    override func mouseDown(theEvent: NSEvent) {
+    override func mouseDown(with theEvent: NSEvent) {
         initialLocation = theEvent.locationInWindow
     }
     
-    override func mouseDragged(theEvent: NSEvent) {
-        let w = NSApplication.sharedApplication().mainWindow!
+    override func mouseDragged(with theEvent: NSEvent) {
+        let w = NSApplication.shared().mainWindow!
         //let screenVisibleFrame = NSScreen.mainScreen()?.visibleFrame
         let windowFrame = w.frame
         let currentLocation = theEvent.locationInWindow
