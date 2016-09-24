@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegate, WKUIDelegate {
+class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
     var webView = WKWebView()
     var centerReceiver = DistributedNotificationCenter()
@@ -18,13 +18,36 @@ class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let contentController = WKUserContentController();
+        let config = WKWebViewConfiguration()
+        
+        contentController.add(
+            self,
+            name: "callbackHandler"
+        )
+        
+        config.userContentController = contentController
+        
+        
+        self.webView = WKWebView(
+            frame: webView.bounds,
+            configuration: config
+        )
+        
+        
+        
         view.autoresizesSubviews = true
         self.view.addSubview(webView)
         webView.frame = self.view.frame        
         webView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable]
         webView.translatesAutoresizingMaskIntoConstraints = true
+        
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        
+        
+
+        
         webView.wantsLayer = true
         webView.enclosingScrollView?.wantsLayer = true
         webView.enclosingScrollView?.backgroundColor = NSColor.clear
@@ -39,23 +62,30 @@ class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegat
 
     func loadWebUI(){
         let ud = UserDefaults.standard
-        let useLocalhost = ud.bool(forKey: "useLocalHost")
         
         var version = "unknown"
         if let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             version = v
         }
-        var u = "https://handy-balancer-91514.firebaseapp.com/admin?version=\(version)"
-        print("url is \(u)")
         
-        if useLocalhost {
-            print("using local host")
-            u = "http://localhost:3000/admin"
+        ud.setValue("testing", forKeyPath: "forTesting")
+        ud.synchronize()
+        
+        var u = "https://handy-balancer-91514.firebaseapp.com/!admin?version=\(version)&rando=3"
+//        var u = "http://mortenjust.com/ting/testmessages.html?asdfads=assddf#"
+
+        print("Checking for custom server")
+        
+        ud.setValue("Hejsaaahm", forKeyPath: "muhajama")
+        
+        if let customServer = ud.string(forKey: "customServer") {
+            u = customServer
+            print("customServer found. Using it. ")
         } else {
-            print("using handybalancer")
+            
         }
         
-        print("load")
+        print("loading url: \(u)")
         
         let r = URLRequest(url: URL(string: u)!)
         webView.load(r)
@@ -121,11 +151,19 @@ class ViewController: NSViewController, NSTextFieldDelegate, WKNavigationDelegat
         return nil
     }
     
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if(message.name == "callbackHandler") {
+            print("JavaScript is sending a message:")
+            let dic = message.body as! NSDictionary
+            
+        }
+    }
+    
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         print("deciding policy")
         decisionHandler(.allow)
-
+        
     }
     
     

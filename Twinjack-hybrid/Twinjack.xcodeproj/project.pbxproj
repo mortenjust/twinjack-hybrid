@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C8C6AC121D7E645300923598 /* Build configuration list for PBXProject "Twinjack-hybrid" */;
+			buildConfigurationList = C8C6AC121D7E645300923598 /* Build configuration list for PBXProject "Twinjack" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -401,7 +401,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8C6AC121D7E645300923598 /* Build configuration list for PBXProject "Twinjack-hybrid" */ = {
+		C8C6AC121D7E645300923598 /* Build configuration list for PBXProject "Twinjack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8C6AC241D7E645300923598 /* Debug */,

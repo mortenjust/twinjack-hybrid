@@ -22,11 +22,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
-                                            <connections>
-                                                <segue destination="b0I-A6-wan" kind="show" id="jez-SD-Paz"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -144,7 +140,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Twinjack" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="93" y="-72"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -169,51 +165,6 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="dCs-3o-Jp3">
-            <objects>
-                <windowController id="b0I-A6-wan" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="V3X-RA-kNF">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                    </window>
-                    <connections>
-                        <segue destination="E7q-g2-fK0" kind="relationship" relationship="window.shadowedContentViewController" id="2B7-ys-cz1"/>
-                    </connections>
-                </windowController>
-                <customObject id="c68-bC-QIB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="737" y="154"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4BR-98-1zs">
-            <objects>
-                <viewController id="E7q-g2-fK0" sceneMemberID="viewController">
-                    <view key="view" id="Sb5-r8-eqL">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-gc-2Kb">
-                                <rect key="frame" x="147" y="173" width="105" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Use localhost" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DD8-dg-T25">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="MLu-G4-geE" name="value" keyPath="values.useLocalHost" id="BtS-dO-U4B"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="mys-sh-qub" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <userDefaultsController representsSharedInstance="YES" id="MLu-G4-geE"/>
-            </objects>
-            <point key="canvasLocation" x="1360" y="146"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
